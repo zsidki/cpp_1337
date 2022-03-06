@@ -95,9 +95,10 @@ class Contact{
 	}
 };
 
+
 int     main()
 {
-
+	std::string str;
 	Contact contact1;
 
     std::cout << "Please enter First name: \n"; 
@@ -117,6 +118,11 @@ int     main()
 	std::cout<< "Nickname: " << contact1.get_nickname()<< std::endl;
 	std::cout<< "Phone number: " << contact1.get_phone_number()<< std::endl;
 	std::cout<< "Darkest secret: " << contact1.get_dark_secret()<< std::endl;
+
+
+
+	if(!(str.compare("EXIT")))
+		exit(0);
 
 
     return 0;
