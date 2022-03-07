@@ -1,5 +1,5 @@
 .PHONY: all fclean clean re
-CC = clang++
+CC = c++
 flags =   -Wall -Wextra -Werror
 SRCS =  Phonebook.cpp
 

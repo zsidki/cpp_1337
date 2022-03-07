@@ -1,4 +1,5 @@
 #include "Phonebook.hpp"
+
 class Phonebook{
 
     private:
@@ -83,16 +84,21 @@ class Contact{
     }
 
 	std::string input_str( std::string str)
+{
+	std::string input;	
+	while(input.length() == 0)
 	{
-		std::string input;	
-		while(input.length() == 0)
-		{
-				getline(std::cin, input);
-				if( input.length() == 0)
-					std::cout << "Please enter " << str << std::endl;
-		}
-		return input;
+			getline(std::cin, input);
+			if (input.length() > 10)
+				input =	input.replace(input.begin()+10, input.end() , 1, '.');
+				
+			if( input.length() == 0)
+				std::cout << "Please enter " << str << std::endl;
 	}
+	return input;
+}
+
+
 };
 
 
@@ -113,13 +119,19 @@ int     main()
 	contact1.set_dark_secret(contact1.input_str("Darkest secret:"));
 
 
-	std::cout<< "First name: " << contact1.get_first_name()<< std::endl;
-	std::cout<< "Last name: " << contact1.get_last_name()<< std::endl;
-	std::cout<< "Nickname: " << contact1.get_nickname()<< std::endl;
-	std::cout<< "Phone number: " << contact1.get_phone_number()<< std::endl;
-	std::cout<< "Darkest secret: " << contact1.get_dark_secret()<< std::endl;
+    		std::cout<<"\n\n----------------- List of Contacts -----------------"<<std::endl;
 
+			std::cout<< "First name: " << contact1.get_first_name()<< std::endl;
+			std::cout<< "Last name: " << contact1.get_last_name()<< std::endl;
+			std::cout<< "Nickname: " << contact1.get_nickname()<< std::endl;
+			std::cout<< "Phone number: " << contact1.get_phone_number()<< std::endl;
+			std::cout<< "Darkest secret: " << contact1.get_dark_secret()<< std::endl;
 
+	int i = 10;
+    std::cout<<"\nFirst Name"<<std::setw(i)<<"| " <<"Last name"<<std::setw(i) <<"| " <<"nickname"<<std::endl;
+
+    std::cout<<contact1.get_first_name()<< std::setfill(' ') <<std::setw(i *  2) <<contact1.get_last_name()<< std::setfill(' ') <<std::setw(i * 2)<<contact1.get_nickname()<< std::setfill(' ')<<std::endl;       
+	
 
 	if(!(str.compare("EXIT")))
 		exit(0);
