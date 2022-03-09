@@ -1,7 +1,7 @@
 .PHONY: all fclean clean re
 CC = c++
 flags =   -Wall -Wextra -Werror
-SRCS =  Phonebook.cpp
+SRCS =  Phonebook.cpp Contact.cpp main.cpp
 
 NAME  = phonebook
 
