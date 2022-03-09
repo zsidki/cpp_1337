@@ -5,7 +5,7 @@ int     main()
 {
 	std::string str;
 	Contact contact1;
-	std::string command = " ";
+	std::string command;
 
 	Phonebook phonebook1;
 	while(command.compare("EXIT"))
