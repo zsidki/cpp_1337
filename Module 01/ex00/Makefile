@@ -1,7 +1,7 @@
 .PHONY: all fclean clean re
 CC = c++
 flags =   -Wall -Wextra -Werror
-SRCS =  Zombie.cpp zombieHorde.cpp main.cpp
+SRCS =  Zombie.cpp newZombie.cpp randomChump.cpp main.cpp 
 
 NAME  = zombie
 
