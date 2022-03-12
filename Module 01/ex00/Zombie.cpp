@@ -2,15 +2,24 @@
 
 void    Zombie::announce(void)
 {
-    std::cout << "Foo:" << " " << "BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << " " << "BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-    void Zombie::set_name(std::string name)
-    {
-        this->name = n;
-    }
-    std::string Zombie::get_name()
-    {
-        return(this->name)
-    }
+void Zombie::set_name(std::string name)
+{
+    this->name = name;
+}
+std::string Zombie::get_name()
+{
+    return(this->name);
+}
 
+Zombie::Zombie(std::string name)
+{
+    std::cout<< name << "new Zombie born ";
+}
+
+Zombie::~Zombie()
+{
+    std::cout<< name << "Zombie dead "<<std::endl;
 }
