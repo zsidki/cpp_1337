@@ -17,8 +17,10 @@ class	HumanA{
 	//void setType(std::string type);
 	//std::string getType();
     std::string attack();
-
+	HumanA(std::string name);
+	~HumanA();
 };
+HumanA *humanA( std::string name);
 
 
 #endif

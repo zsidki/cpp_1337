@@ -19,3 +19,8 @@ Weapon::~Weapon()
 {
 
 }
+
+void Weapon::setWeapon(std::string type)
+{
+    this->type = type;
+}
