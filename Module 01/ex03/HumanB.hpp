@@ -8,7 +8,8 @@
 class	HumanB{
 
 	private:
-	//std::string type;
+	std::string name;
+	Weapon w;
 
 	public:
 

@@ -4,12 +4,14 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+#include "Weapon.hpp"
+
 
 class	HumanA{
 
 	private:
-	//std::string type;
-
+		std::string name;
+		Weapon w;
 	public:
 
 	//void setType(std::string type);
