@@ -20,4 +20,4 @@ re: fclean all
 push:
 	@git add .
 	@git commit -m "$(m)"
-	@git push -f origin main
+	@git push -f origin master
