@@ -18,7 +18,6 @@ class	Weapon{
 	//std::string getWeapon();
 	Weapon(std::string type);
 	Weapon();
-	~Weapon();
 
 };
 

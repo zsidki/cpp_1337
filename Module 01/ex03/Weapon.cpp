@@ -15,11 +15,6 @@ Weapon::Weapon(std::string type)
     this->type = type;
 }
 
-Weapon::~Weapon()
-{
-
-}
-
 Weapon::Weapon()
 {
     type="Default";

@@ -15,7 +15,6 @@ class	HumanB{
 	public:
 		void setWeapon(Weapon& weapon);
 		HumanB(std::string name);
-		//~HumanB();
     	void attack() const;
 
 };
