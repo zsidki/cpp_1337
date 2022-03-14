@@ -4,8 +4,6 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
-# include "HumanA.hpp"
-# include "HumanB.hpp"
 
 class	Weapon{
 
@@ -14,11 +12,12 @@ class	Weapon{
 
 	public:
 	void setType(std::string type);
-	void setWeapon(std::string type);
+	//void setWeapon(std::string type);
 
 	const std::string& getType() const;
-	std::string getWeapon();
+	//std::string getWeapon();
 	Weapon(std::string type);
+	Weapon();
 	~Weapon();
 
 };

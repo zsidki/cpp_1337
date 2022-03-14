@@ -4,22 +4,19 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+# include "Weapon.hpp"
 
 class	HumanB{
 
 	private:
-	std::string name;
-	Weapon w;
-	std::string type;
-
+		std::string _name;
+		Weapon *_weapon;
 
 	public:
-	void setType(std::string type);
-	void setWeapon(std::string type);
-	//void setType(std::string type);
-	//std::string getType();
-    std::string attack();
-	void setWeapon(std::string type);
+		void setWeapon(Weapon& weapon);
+		HumanB(std::string name);
+		//~HumanB();
+    	void attack() const;
 
 };
 

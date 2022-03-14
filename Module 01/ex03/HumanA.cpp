@@ -1,17 +1,11 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name)
+HumanA::HumanA(std::string name, Weapon& weapon) :  _weapon(weapon)
 {
-    std::cout << "HumaaanA"<<name << std::endl;
-}
-HumanA::~HumanA()
-{
-
+    this->name = name;
 }
 
-HumanA *humanA( std::string name)
-{	
-	HumanA*		humanA = new HumanA(name);
-	//std::cout << zombie << std::endl;
-	return humanA;
+void HumanA::attack() const
+{
+    std::cout << name << " attacks with their " << _weapon.getType() << std::endl;
 }

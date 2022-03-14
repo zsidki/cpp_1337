@@ -1,7 +1,7 @@
 .PHONY: all fclean clean re
 CC = c++
 flags = -Wall -Wextra -Werror
-SRCS  = Makefile, main.cpp, Weapon.cpp, HumanA.cpp, HumanB.cpp
+SRCS  =  main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 NAME  = main
 
@@ -20,4 +20,4 @@ re		: fclean all
 push	:
 	@git add .
 	@git commit -m "$(m)"
-	@git push -f origin master
+	@git push -f origin main
