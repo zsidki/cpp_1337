@@ -1,9 +1,10 @@
 .PHONY: all fclean clean re
 CC = c++
-flags = -Wall -Wextra -Werror -fsanitize=address
+flags = -Wall -Wextra -Werror #-fsanitize=address
 SRCS  =  main.cpp
 
 NAME  = replace
+NAME_file  = *.replace
 
 all: $(NAME)
 
@@ -12,6 +13,7 @@ $(NAME): ${SRCS}
 
 clean:
 	@rm -rf $(NAME)
+	@rm -rf $(NAME_file)
 
 fclean: clean
 
