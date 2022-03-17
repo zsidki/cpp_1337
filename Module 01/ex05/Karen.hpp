@@ -3,7 +3,6 @@
 
 # include <iostream>
 # include <string>
-# include <iomanip>
 
 class	    Karen{
 
@@ -15,8 +14,6 @@ class	    Karen{
 
 	public:
         void complain( std::string level );
-
-
 };
 
 #endif
