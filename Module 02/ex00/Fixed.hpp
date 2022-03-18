@@ -8,14 +8,15 @@ class	    Fixed{
 
 	private:
 
-    int integer;
-    static const int integer;
+    int _value;
+    static const int _fractional_bits = 8;
 
 
 	public:
 
-    Fixed(int integer);
-    Fixed(const Fixed& copy_constructor);
+    Fixed();
+    Fixed(int value);
+    Fixed(const Fixed& other);
     ~Fixed();
     Fixed& operator= (const Fixed& Fixed);
     void setRawBits( int const raw );

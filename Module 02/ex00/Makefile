@@ -1,7 +1,7 @@
 .PHONY: all fclean clean re
 CC = c++
 flags = -Wall -Wextra -Werror #-fsanitize=address
-SRCS  =  main.cpp  Fixed.cpp  Fixed.hpp
+SRCS  =  main.cpp  Fixed.cpp
 
 NAME  =  fixed
 
