@@ -51,9 +51,9 @@ class	    Fixed{
 //------------ A static member function --------------//
 
 	static Fixed& min( Fixed& other1, Fixed& other2);
-	static Fixed& max( Fixed& other1, Fixed& other2);
-	static const Fixed& min( Fixed const& other1, Fixed const& other2);
-	static const Fixed& max(Fixed const& other1, Fixed const& other2);
+	static Fixed& max( Fixed&  other1, Fixed&   other2);
+	static const Fixed& min( const Fixed& other1, const Fixed& other2);
+	static const Fixed& max(const Fixed& other1, const Fixed& other2);
 
 };
 

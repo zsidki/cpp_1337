@@ -1,27 +1,19 @@
 #include "Fixed.hpp"
 
 // Default constructor
-Fixed::Fixed(void) : _value(0) {
-    std::cout << "Default constructor called" << std::endl;
+Fixed::Fixed(void) : _value(0) {}
+
+// Parametrized constructor
+Fixed::Fixed(int ivalue) : _value(ivalue << _fractional_bits) {
 }
 
 // Parametrized constructor
-Fixed::Fixed(int ivalue) : _value(ivalue) {
-    std::cout<<"Int constructor called"<<std::endl;
-     this->_value = ivalue * (1 << _fractional_bits);
-}
-
-// Parametrized constructor
-Fixed::Fixed(float fvalue) : _value(fvalue) {
-    std::cout<<"Float constructor called"<<std::endl;
-    this->_value = roundf(fvalue * (1 << _fractional_bits));
-
+Fixed::Fixed(float fvalue) : _value(roundf(fvalue * (1 << _fractional_bits))) {
 }
 
 // copy constructor
 Fixed::Fixed(const Fixed& other)
 {
-    std::cout << "Copy constructor called" << std::endl;
     *this = other;
 }
 
@@ -31,7 +23,6 @@ Fixed::~Fixed() {}
 // assignment operator=
 Fixed& Fixed::operator= (const Fixed& other)
 {
-    std::cout << "Copy assignment operator called " << std::endl;
     this->_value = other._value;
     return (*this); 
 }
@@ -52,9 +43,7 @@ void Fixed::setRawBits( int const raw )
 // getter
 int Fixed::getRawBits() const
 {
-    std::cout<< "getRawBits member function called"<< std::endl;
     return (this->_value);
-    std::cout<< this->_value<< std::endl;
 
 }
 
@@ -123,7 +112,8 @@ Fixed Fixed::operator-(const Fixed& other) const
 Fixed Fixed::operator*(const Fixed& other) const
 {
     Fixed tmp;
-    tmp.setRawBits(other.getRawBits() * this->getRawBits());
+    tmp._value = other._value * _value;
+    tmp._value >>= _fractional_bits;
     return tmp;
 }
 
@@ -151,21 +141,21 @@ Fixed& Fixed::operator--()
 
 Fixed Fixed::operator++(int)
 {
-   Fixed temp = *this;
-   ++*this;
-   return temp;
+	Fixed temp = *this;
+	++*this;
+	return temp;
 }
 
 Fixed Fixed::operator--(int)
 {
-   Fixed temp = *this;
-   --*this;
-   return temp;
+	Fixed temp = *this;
+	--*this;
+	return temp;
 }
 
-//------------ A static member function --------------//
+//------------ A static member function max & min --------------//
 
-Fixed& min( Fixed& other1, Fixed& other2)
+Fixed& Fixed::min( Fixed& other1, Fixed& other2)
 {
     if (other1 <= other2)
         return other1;
@@ -174,15 +164,15 @@ Fixed& min( Fixed& other1, Fixed& other2)
 
 }
 
-Fixed& max( Fixed& other1, Fixed& other2)
+Fixed& Fixed::max( Fixed&  other1, Fixed& other2)
 {
     if (other1 >= other2)
-        return other1;
+        return other1 ;
     else
-        return other2;
+        return other2 ;
 }
 
-const Fixed& mix(Fixed const& other1, Fixed const& other2)
+const Fixed& Fixed::min(const Fixed& other1, const Fixed& other2)
 {
     if (other1 <= other2)
         return other1;
@@ -190,10 +180,10 @@ const Fixed& mix(Fixed const& other1, Fixed const& other2)
         return other2;
 }
 
-const Fixed& max(Fixed const& other1, Fixed const& other2)
+const Fixed& Fixed::max(const Fixed& other1,  const Fixed& other2)
 {
     if (other1 >= other2)
         return other1;
     else
-        return other2;
+        return other2 ;
 }
