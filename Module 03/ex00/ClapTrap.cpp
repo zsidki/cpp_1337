@@ -34,7 +34,13 @@ unsigned int ClapTrap::getAttack_Damage(void) const
 // Member functions
 void ClapTrap::attack(const std::string& target)
 {
+    if ( _hit_points != 0 && _energy_point != 0 )
+    {
+        _hit_points - _attack_damage;
+        
+    }
     std::cout << "ClapTrap "<< _name << "attacks "<< target << " , causing " << _attack_damage << "points of damage!" << std::endl;
+    
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
