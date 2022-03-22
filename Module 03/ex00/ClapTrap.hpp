@@ -15,10 +15,15 @@ class	    ClapTrap{
 	public:
 
 
-    	ClapTrap();
 		ClapTrap(std::string _name);
-    	//ClapTrap();
-    	~ClapTrap();
+		ClapTrap(const ClapTrap& claptrap);
+		ClapTrap();
+		~ClapTrap();
+
+		void setAttack_Damage(unsigned int amount);
+		unsigned int getAttack_Damage(void) const;
+
+
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

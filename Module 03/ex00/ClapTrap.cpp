@@ -21,19 +21,28 @@ ClapTrap::ClapTrap(std::string name)
     this->_attack_damage = 0;
 }
 
+void ClapTrap::setAttack_Damage(unsigned int amount)
+{
+    this -> _attack_damage = amount;
+}
+
+unsigned int ClapTrap::getAttack_Damage(void) const
+{
+    return (this->_attack_damage);
+}
+
 // Member functions
 void ClapTrap::attack(const std::string& target)
 {
-    //ClapTrap <name> attacks <target>, causing <damage> points of damage!
-    std::cout << "";
+    std::cout << "ClapTrap "<< _name << "attacks "<< target << " , causing " << _attack_damage << "points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-
+    std::cout << "ClapTrap "<< _name << "takeDamge "<< amount << " , causing " << _attack_damage << "points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-
+        std::cout << "ClapTrap "<< _name << "takeDamge "<< amount << " , causing " << _attack_damage << "points of damage!" << std::endl;
 }
