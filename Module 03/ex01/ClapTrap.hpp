@@ -6,7 +6,7 @@
 
 class	    ClapTrap{
 
-	private:
+	protected:
 		std::string _name; // which is passed as parameter to a constructor
 		int _hit_points;
 		int _energy_point;
