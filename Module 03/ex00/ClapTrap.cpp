@@ -3,13 +3,13 @@
 // Default constructor
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << _name << " Default constructor called" << std::endl;
 }
 
 // Default destructor
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << _name << " Destructor called" << std::endl;
 }
 
 // Parametrized constructor
@@ -34,8 +34,8 @@ unsigned int ClapTrap::getAttack_Damage(void) const
 // Member functions
 void ClapTrap::attack(const std::string& target)
 {
-
-    std::cout << "ClapTrap "<< _name << "attacks "<< target << ", causing " << _attack_damage << "points of damage!" << std::endl;
+    _energy_point -= 1;
+    std::cout << "ClapTrap "<< _name << " attacks "<< target << ", causing " << _attack_damage << " points of damage!" << std::endl;
     
 }
 
@@ -43,16 +43,16 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if ( _hit_points != 0 && _energy_point != 0 )
     {
-        _hit_points - _attack_damage;
+        _hit_points -= amount;
     }
-    std::cout << "ClapTrap "<< _name << "takeDamge "<< amount << ", causing " << _attack_damage << "points of damage!" << std::endl;
+    std::cout << "ClapTrap "<< _name << " take "<< amount << " of damgae " << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if ( _hit_points != 0 && _energy_point != 0 )
     {
-        _hit_points - _attack_damage;
+        _hit_points += amount;
     }
-        std::cout << "ClapTrap "<< _name << "takeDamge "<< amount << ", causing " << _attack_damage << "points of damage!" << std::endl;
+    std::cout << "ClapTrap "<< _name << " has been repaired, " << amount << " hit points back." << std::endl;
 }
