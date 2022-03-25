@@ -1,6 +1,9 @@
 #include "Cat.hpp"
 
 Cat::Cat(void){
+    this->_type = "Cat";
+    std::cout<< "Cat called"<< std::endl;
+
 
 }
 
@@ -9,6 +12,7 @@ Cat::Cat(void){
 // }
 
 Cat::~Cat(){
+        std::cout<< "Cat left"<< std::endl;
 
 }
 
@@ -22,3 +26,4 @@ void Cat::makeSound() const
 {
     std::cout<<" Cat 🐱: 🐈 Meow"<<std::endl;
 }
+

@@ -1,6 +1,8 @@
 #include "Dog.hpp"
 
 Dog::Dog(void){
+    this->_type = "Dog";
+    std::cout<< "Dog called"<< std::endl;
 
 }
 
@@ -9,6 +11,7 @@ Dog::Dog(void){
 // }
 
 Dog::~Dog(){
+        std::cout<< "Dog left"<< std::endl;
 
 }
 
