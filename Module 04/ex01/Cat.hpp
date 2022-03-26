@@ -10,10 +10,10 @@ class Cat : public Animal
 protected:
 
 private:
-    Brain* _brain;
+    Brain* c_brain;
 public:
     Cat(void);
-    Cat(const Cat &_brain);
+    Cat(const Cat &obj);
     ~Cat();
     Cat & operator = (const Cat &instance);
     void makeSound() const;

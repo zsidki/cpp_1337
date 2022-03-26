@@ -13,7 +13,7 @@ protected:
 public:
     Animal(void);
     Animal(const Animal &instance);
-    ~Animal();
+    virtual ~Animal();
     Animal & operator = (const Animal &instance);
     void	setType(std::string type);
 	std::string		getType(void) const;

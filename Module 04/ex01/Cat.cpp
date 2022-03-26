@@ -1,32 +1,26 @@
 #include "Cat.hpp"
 
 Cat::Cat(void){
-
+    Brain* b = new Brain();
+    this->c_brain = b;
 }
 
-Cat::Cat(const Cat &c_brain){
-    Brain* c_brain = new Brain();
-    *this = c_brain;
+Cat::Cat(const Cat &obj){
+    Brain* b = new Brain();
+    this->c_brain = b;
+    *this = obj;
 }
 
 Cat::~Cat(){
-
-delete c_brain;
 }
 
-// Cat & Cat::operator = (const Cat &instance){
-//     //this->Attributes = instance.attributes
-//     return (*this);
-// }
-
+Cat & Cat::operator= (const Cat &instance){
+    this->c_brain = instance.c_brain;
+    return (*this);
+}
 
 void Cat::makeSound() const
 {
     std::cout<<" Cat 🐱: 🐈 Meow"<<std::endl;
 }
 
-Cat& Cat::operator= (const Cat& other)
-{
-    this->_value = other._value;
-    return (*this); 
-}

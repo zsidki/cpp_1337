@@ -11,11 +11,11 @@ class Dog : public Animal
 protected:
 
 private:
-    //Brain* _brain;
+    Brain* d_brain;
 
 public:
     Dog(void);
-    Dog(const Dog &d_brain);
+    Dog(const Dog &obj);
     ~Dog();
     Dog & operator = (const Dog &instance);
     void makeSound() const;
