@@ -7,10 +7,6 @@
 
 class Dog : public Animal
 {
-protected:
-
-private:
-
 public:
     Dog(void);
     Dog(const Dog &instance);

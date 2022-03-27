@@ -6,20 +6,17 @@
 
 class Cat : public Animal
 {
-protected:
-    std:: string _type;
-
-private:
 
 public:
-    Cat(void);
-    Cat(const Cat &instance);
+
+    Cat();
     ~Cat();
-    Cat & operator = (const Cat &instance);
+    Cat(Cat const &cat);
+
+    Cat& operator = (Cat const &cat);
+
     void makeSound() const;
 
 };
-
-std::ostream &	operator<<( std::ostream & ostr, Cat const & instance);
 
 #endif

@@ -1,25 +1,26 @@
 #include "Cat.hpp"
 
-Cat::Cat(void){
+Cat::Cat()
+{
     this->_type = "Cat";
-    std::cout<< "Cat called"<< std::endl;
-
-
+    std::cout<< "Call "<< this->_type << std::endl;
 }
 
-// Cat::Cat(const Cat &instance){
-//     *this = instance;
-// }
-
-Cat::~Cat(){
-        std::cout<< "Cat left"<< std::endl;
-
+Cat::~Cat()
+{
+    std::cout<< this->_type <<" left"<< std::endl;
 }
 
-// Cat & Cat::operator = (const Cat &instance){
-//     //this->Attributes = instance.attributes
-//     return (*this);
-// }
+Cat::Cat(Cat const &cat)
+{
+    *this = cat;
+}
+
+Cat& Cat::operator = (Cat const &cat)
+{
+    this->_type = cat._type;
+    return (*this);
+}
 
 
 void Cat::makeSound() const
