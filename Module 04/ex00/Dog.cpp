@@ -1,25 +1,26 @@
 #include "Dog.hpp"
 
-Dog::Dog(void){
-    this->_type = "Dog";
-    std::cout<< "Dog called"<< std::endl;
-
+Dog::Dog()
+{
+    this->_type = "Dog 🐶";
+    std::cout<< "Call "<< this->_type << std::endl;
 }
 
-// Dog::Dog(const Dog &instance){
-//     *this = instance;
-// }
-
-Dog::~Dog(){
-        std::cout<< "Dog left"<< std::endl;
-
+Dog::Dog(Dog const &Dog) : Animal()
+{
+    *this = Dog;
 }
 
-// Dog & Dog::operator = (const Dog &instance){
-//     //this->Attributes = instance.attributes
-//     return (*this);
-// }
+Dog::~Dog()
+{
+    std::cout<< this->_type <<" left"<< std::endl;
+}
 
+Dog& Dog::operator = (Dog const &Dog)
+{
+    this->_type = Dog._type;
+    return (*this);
+}
 
 void Dog::makeSound() const
 {

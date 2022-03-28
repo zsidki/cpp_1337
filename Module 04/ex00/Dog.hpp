@@ -9,13 +9,11 @@ class Dog : public Animal
 {
 public:
     Dog(void);
-    Dog(const Dog &instance);
+    Dog(const Dog &Dog);
     ~Dog();
-    Dog & operator = (const Dog &instance);
+    Dog & operator = (const Dog &Dog);
     void makeSound() const;
 
 };
-
-std::ostream &	operator<<( std::ostream & ostr, Dog const & instance);
 
 #endif

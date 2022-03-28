@@ -8,13 +8,12 @@ class WrongCat : public WrongAnimal
 {
 public:
     WrongCat(void);
-    WrongCat(const WrongCat &instance);
+    WrongCat(const WrongCat &WrongCat);
     ~WrongCat();
-    WrongCat & operator = (const WrongCat &instance);
+    WrongCat & operator = (const WrongCat &WrongCat);
     void makeSound() const;
 
 };
 
-std::ostream &	operator<<( std::ostream & ostr, WrongCat const & instance);
 
 #endif

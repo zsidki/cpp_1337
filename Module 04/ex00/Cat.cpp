@@ -2,8 +2,13 @@
 
 Cat::Cat()
 {
-    this->_type = "Cat";
+    this->_type = "Cat 🐱";
     std::cout<< "Call "<< this->_type << std::endl;
+}
+
+Cat::Cat(Cat const &cat) : Animal()
+{
+    *this = cat;
 }
 
 Cat::~Cat()
@@ -11,10 +16,7 @@ Cat::~Cat()
     std::cout<< this->_type <<" left"<< std::endl;
 }
 
-Cat::Cat(Cat const &cat)
-{
-    *this = cat;
-}
+
 
 Cat& Cat::operator = (Cat const &cat)
 {
