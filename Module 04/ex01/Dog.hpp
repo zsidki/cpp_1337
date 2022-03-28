@@ -13,10 +13,10 @@ private:
 
 public:
     Dog(void);
-    Dog(const Dog &obj);
+    Dog(const Dog &dog);
     ~Dog();
 
-    Dog & operator = (const Dog &instance);
+    Dog & operator = (const Dog &dog);
 
     void makeSound() const;
 

@@ -4,35 +4,36 @@ Dog::Dog(void)
 {
     this->_type = "Dog 🐶";
     std::cout<< "Call "<< this->_type << std::endl;
-    Brain* b = new Brain();
-    this->d_brain = b;
+    this->d_brain  = new Brain();
 }
 
 Dog::Dog(const Dog &dog)  : Animal()
 {
-    Brain* b = new Brain();
-    this->d_brain = b;
+    std::cout << "Dog Copy Constructor !!"<< std::endl;
+    delete this->d_brain;
+    this->d_brain = new Brain();
     *this = dog;
 }
 
 Dog::~Dog()
 {
+    delete this->d_brain;
     std::cout<< this->_type <<" left"<< std::endl;
 }
 
-Dog & Dog::operator= (const Dog &instance)
+Brain* Dog::getBrain() const
+{
+    return (this->d_brain);
+}
+
+Dog& Dog::operator= (const Dog &dog)
 {
     std::cout << "Dog Assignement! "<< std::endl;
-    this->d_brain = instance.d_brain;
+    *this->d_brain = *(dog.getBrain());
     return (*this);
 }
 
 void Dog::makeSound() const
 {
     std::cout<<" Dog 🐶: 🐕 Hoooow  "<<std::endl;
-}
-
-Brain* Dog::getBrain() const
-{
-    return (this->d_brain);
 }

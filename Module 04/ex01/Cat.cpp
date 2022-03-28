@@ -4,36 +4,37 @@ Cat::Cat()
 {
     this->_type = "Cat 🐱";
     std::cout<< "Call "<< this->_type << std::endl;
-    Brain* b = new Brain();
-    this->c_brain = b;
+    this->c_brain = new Brain();
 }
 
 Cat::Cat(const Cat &cat) : Animal()
 {
-    Brain* b = new Brain();
-    this->c_brain = b;
+    std::cout << "Cat Copy Constructor !!"<< std::endl;
+    delete this->c_brain;
+    this->c_brain = new Brain();
     *this = cat;
 }
 
 Cat::~Cat()
 {
+    delete this->c_brain;
     std::cout<< this->_type <<" left"<< std::endl;
 
 }
 
-Cat & Cat::operator= (const Cat &instance)
+Brain *Cat::getBrain() const
 {
-    std::cout << "Cat Assignement! "<< std::endl;
-    this->c_brain = instance.c_brain;
+    return (this->c_brain);
+}
+
+Cat& Cat::operator= (const Cat &cat)
+{
+    std::cout << "Cat Assignment! "<< std::endl;
+     *this->c_brain = *(cat.getBrain());
     return (*this);
 }
 
 void Cat::makeSound() const
 {
     std::cout<<" Cat 🐱: 🐈 Meow"<<std::endl;
-}
-
-Brain *Cat::getBrain() const
-{
-    return (this->c_brain);
 }

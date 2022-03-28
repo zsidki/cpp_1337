@@ -1,6 +1,6 @@
 .PHONY: all fclean clean re
 CC = c++
-flags = -Wall -Wextra -Werror #-fsanitize=address
+flags = -g -Wall -Wextra -Werror #-fsanitize=address
 SRCS  =  main.cpp  Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
 NAME  =  Animal
