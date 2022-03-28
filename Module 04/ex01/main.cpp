@@ -66,6 +66,7 @@ int main()
     cat1 = cat2;
     dog1 = dog2;
 
+
     std::cout << cat1.getType() << " 0: " << cat1.getBrain()->_ideas[0] << std::endl;
     std::cout << cat2.getType() << " 1: " << cat2.getBrain()->_ideas[1] << std::endl;
 
