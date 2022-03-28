@@ -71,7 +71,7 @@ int		ft_main()
 int main()
 {
 	ft_main();
-	while(1);
+	//while(1);
 	return 0;
 }
 
