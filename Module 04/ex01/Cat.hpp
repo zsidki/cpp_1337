@@ -7,19 +7,22 @@
 
 class Cat : public Animal
 {
-protected:
 
 private:
     Brain* c_brain;
+
 public:
-    Cat(void);
-    Cat(const Cat &obj);
+    Cat();
+    Cat(const Cat &cat);
     ~Cat();
-    Cat & operator = (const Cat &instance);
+
+    Cat & operator = (const Cat &cat);
+
     void makeSound() const;
+
+    Brain* getBrain() const;
 
 };
 
-std::ostream &	operator<<( std::ostream & ostr, Cat const & instance);
 
 #endif

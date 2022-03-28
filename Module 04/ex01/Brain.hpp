@@ -6,19 +6,16 @@
 
 class Brain
 {
-    protected:
-    std::string ideas[100];
-
-    private:
 
     public:
+        std::string _ideas[100];
         Brain(void);
-        Brain(const Brain &instance);
+        Brain(const Brain &brain);
         ~Brain();
-        Brain & operator = (const Brain &instance);
+        Brain & operator = (const Brain &brain);
 
 };
 
-std::ostream &	operator<<( std::ostream & ostr, Brain const & instance);
+//std::ostream &	operator<<( std::ostream & ostr, Brain const & instance);
 
 #endif
