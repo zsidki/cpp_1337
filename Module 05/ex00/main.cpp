@@ -3,25 +3,23 @@
 
 int     main()
 {
-    int grade;
-    std::cin >> grade ;
+
     try
     {
+        // Bureaucrat b("Bureaucrat1", 10);
+        // std::cout << b << std::endl;
 
-        if (grade > 150)
-        {
-            throw Bureaucrat::GradeTooLowException();
-        }
-    
+        Bureaucrat b2("Bureaucrat1", 0);
+        std::cout << b2 << std::endl;
+
+        // Bureaucrat b3("Bureaucrat1", 151);
+        // std::cout << b3 << std::endl;
     }
 
     catch (std::exception& e)
     {
-            std::cout<<"chditha\n";
-
+        std::cout<<"exception : "<< e.what() <<std::endl;
     }
-
-
 
     return 0;
 }

@@ -5,13 +5,15 @@ SRCS  =  main.cpp  Bureaucrat.cpp
 
 NAME  = Bureaucrat
 
+DSYM = Bureaucrat.dsym
+
 all: $(NAME)
 
 $(NAME): ${SRCS}
 	@$(CC) $(flags) $(SRCS) -o $(NAME) 
 
 clean:
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(DSYM)
 
 fclean: clean
 

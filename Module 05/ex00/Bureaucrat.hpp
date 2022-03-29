@@ -23,21 +23,18 @@ public:
     Bureaucrat & operator = (const Bureaucrat &instance);
 
     class GradeTooHighException : public std::exception
-    {
-        virtual const char* what() const  throw();
-
+    {   public:
+            virtual const char* what() const  throw();
     };
 
     class GradeTooLowException : public std::exception
     {
-        virtual const char* what() const throw();
-
+        public:
+            virtual const char* what() const throw();
     };
-
-
 };
 
 
-std::ostream &	operator<<( std::ostream & ostr, Bureaucrat const & instance);
+std::ostream &	operator<<( std::ostream & ostr, Bureaucrat const & bureaucrat);
 
 #endif
