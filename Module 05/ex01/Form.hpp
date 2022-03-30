@@ -5,26 +5,30 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form
 {
 private:
     const std::string _name;
-    const int _grade;
+    const int _grade_signed;
+    const int _grad_execute;
 	bool _is_signed;
 
 
 public:
     Form(void);
-    Form(std::string name, int grade, bool is_signed);
+    Form(std::string name, int grade_signed, int grad_execute);
 	Form(const Form& form);
     ~Form();
 
     Form & operator = (const Form &instance);
 
-	bool	beSigned(const Bureaucrat& bureaucrat);
+	void	beSigned(const Bureaucrat& bureaucrat);
 
     std::string getName() const;
     int getGrade() const;
+    int getSignGrade() const;
+    int getGradExecute() const;
 
     class GradeTooHighException : public std::exception
     {   public:

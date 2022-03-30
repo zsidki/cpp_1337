@@ -1,18 +1,17 @@
 #include "Form.hpp"
 
-Form::Form(void) : _name("Unknown"), _grade(1), _is_signed(false) {}
+Form::Form(void) : _name("Unknown"), _grade_signed(1), _grad_execute(1), _is_signed(false){}
 
-Form::Form(std::string name, int grade, bool is_signed) : _name(name), _grade(grade), _is_signed(is_signed)
+Form::Form(std::string name, int grade_signed, int grad_execute) : _name(name), _grade_signed(grade_signed), _grad_execute(grad_execute), _is_signed(false)
 {
-    if(grade < 1)
+    if(grade_signed < 1)
         throw GradeTooHighException();
-    if (grade > 150)
+    if (grade_signed > 150)
         throw GradeTooLowException();
 
 }
 
-Form::Form(const Form& form) : _name(form._name), _grade(form._grade), _is_signed(form._is_signed)
-{}
+Form::Form(const Form& form) : _name(form._name), _grade_signed(form._grade_signed), _grad_execute(form._grad_execute), _is_signed(form._is_signed){}
 
 Form::~Form(){}
 
@@ -29,7 +28,17 @@ std::string     Form::getName() const
 
 int     Form::getGrade() const 
 {
-    return(this->_grade);
+    return(this->_is_signed);
+}
+
+int Form::getSignGrade() const
+{
+    return(this->_is_signed);
+}
+
+int Form::getGradExecute() const
+{
+    return(this->_grad_execute);
 }
 
 const char* Form::GradeTooHighException::what() const  throw()
@@ -42,9 +51,9 @@ const char* Form::GradeTooLowException::what() const  throw()
     return "Grade Too Low ";
 }
 
-bool	Form::beSigned(const Bureaucrat& bureaucrat){
-
-    if(this->_grade >= bureaucrat.getGrade())
+void	Form::beSigned(const Bureaucrat& bureaucrat)
+{
+    if(this->_grade_signed >= bureaucrat.getGrade())
         _is_signed = true;
     else
         throw GradeTooLowException();
