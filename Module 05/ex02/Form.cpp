@@ -26,7 +26,7 @@ std::string     Form::getName() const
     return(this->_name);
 }
 
-int     Form::getGrade() const 
+int Form::getGrade() const 
 {
     return(this->_is_signed);
 }
@@ -50,6 +50,12 @@ const char* Form::GradeTooLowException::what() const  throw()
 {
     return "Grade Too Low ";
 }
+const char* Form::FormNotSignedException::what() const  throw()
+{
+    return "Form Not Signed ";
+}
+
+Form::FormNotSignedException::FormNotSignedException(std::string nameform) : _nameform(nameform){}
 
 void	Form::beSigned(const Bureaucrat& bureaucrat)
 {

@@ -41,6 +41,17 @@ public:
             virtual const char* what() const throw();
     };
 
+    class FormNotSignedException : public std::exception
+    {
+        private:
+            std::string _nameform;
+        public:
+            FormNotSignedException(std::string nameform);
+            virtual const char* what() const throw();
+    };
+    
+
+
 };
 
 std::ostream &	operator<<( std::ostream & ostr, Form const & form);
