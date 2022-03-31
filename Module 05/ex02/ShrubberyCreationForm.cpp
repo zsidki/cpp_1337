@@ -1,17 +1,20 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : _target("unknown"), Form("ShrubberyCreationForm", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : _target(target), Form("ShrubberyCreationForm", 145,137){}
+
+ShrubberyCreationForm::ShrubberyCreationForm() : _target("unknown"), Form("ShrubberyCreationForm", 145, 137)
 {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &instance)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form) : 
+_target(form.getTarget()), Form("ShrubberyCreationForm", 145, 137)
 {
-    *this = instance;
+    *this = form;
 }
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : _target(target), Form("ShrubberyCreationForm", 145,137){}
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
-ShrubberyCreationForm & ShrubberyCreationForm::operator = (const ShrubberyCreationForm &instance){
+ShrubberyCreationForm & ShrubberyCreationForm::operator = (const ShrubberyCreationForm &instance)
+{
     this->_target = instance.getTarget();
     //(void)instance;
     return (*this);
@@ -30,36 +33,40 @@ std::ostream &	operator<<( std::ostream & ostr, ShrubberyCreationForm const & sh
 
 void    ShrubberyCreationForm::execute( Bureaucrat const & execute) const
 {
-    std::string file;
+    //std::string file;
     if(!(this->getSignGrade()))
         throw FormNotSignedException(this->getName());
     else if (execute.getGrade() > this->getGradExecute())
         throw GradeTooLowException();
     else
+    {
         std::ofstream file(this->_target);
-    file<<"                                                 "
-        <<"                     ,                           "
-        <<"                    dM                           "   
-        <<"                   MMr                           "   
-        <<"                  4MMML                  .       "       
-        <<"                  MMMMM.                xf       "       
-        <<"  .              \M6MMM               .MM-       "       
-        <<"   Mh..          +MM5MMM            .MMMM        "       
-        <<"   .MMM.         .MMMMML.          MMMMMh        "       
-        <<"    )MMMh.        MM5MMM         MMMMMMM         "   
-        <<"     3MMMMx.     \MMM3MMf      xnMMMMMM\         "   
-        <<"     \*MMMMM      MMMMMM.     nMMMMMMP\          "       
-        <<"       *MMMMMx    \MMM5M\    .MMMMMMM=           "   
-        <<"        *MMMMMh   \MMMMM\   JMMMMMMP             "   
-        <<"          MMMMMM   GMMMM.  dMMMMMM            .  "   
-        <<"           MMMMMM  \MMMM  .MMMMM(        .nnM\\  "   
-        <<"..          *MMMMx  MMM\  dMMMM\    .nnMMMMM*    "   
-        <<" \MMn...     \MMMMr \MM   MMM\   .nMMMMMMMM\     "   
-        <<"  \4MMMMnn..   *MMM  MM  MMP\  .dMMMMMMM\\       "       
-        <<"    ^MMMMMMMMx.  *ML \M .M*  .MMMMMM**\          "   
-        <<"       *PMMMMMMhn. *x > M  .MMMM**\\             "   
-        <<"          \\**MMMMhx/.h/ .=*\                    "   
-        <<"                   333.\%.333                    "          
-        <<"                   \     \                       "   
-        // ------------------------------------------------ //
+    file<<"                                                  \n"
+        <<"                     ,                            \n"
+        <<"                    dM                            \n"   
+        <<"                   MMr                            \n"   
+        <<"                  4MMML                  .        \n"       
+        <<"                  MMMMM.                xf        \n"       
+        <<"  .              -M6MMM               .MM-        \n"       
+        <<"   Mh..          +MM5MMM            .MMMM         \n"       
+        <<"   .MMM.         .MMMMML.          MMMMMh         \n"       
+        <<"    )MMMh.        MM5MMM         MMMMMMM          \n"   
+        <<"     3MMMMx.     -MMM3MMf      xnMMMMMM*          \n"   
+        <<"     -*MMMMM      MMMMMM*     nMMMMMMP*           \n"       
+        <<"       *MMMMMx    -MMM5M.    .MMMMMMM=            \n"   
+        <<"        *MMMMMh   -MMMMM*   JMMMMMMP              \n"   
+        <<"          MMMMMM   GMMMM.  dMMMMMM            .   \n"   
+        <<"           MMMMMM  -MMMM  .MMMMM(        .nnMM*   \n"   
+        <<"..          *MMMMx  MMM*  dMMMM*    .nnMMMMM*     \n"   
+        <<" -MMn...     -MMMMr -MM   MMM*   .nMMMMMMMM*      \n"   
+        <<"  **MMMMnn..   *MMM  MM  MMP*  .dMMMMMMMM*        \n"       
+        <<"    ^MMMMMMMMx.  *ML -M .M*  .MMMMMM***           \n"   
+        <<"       *PMMMMMMhn. *x > M  .MMMMMMM*              \n"   
+        <<"          ****MMMMhx/.h/ .=MMM****                \n"   
+        <<"                   333.*%.333                     \n"          
+        <<"                   *        *                     \n"   
+        // ------------------------------------------------  \n//
         << std::endl;
+        file.close(); 
+    }
+}

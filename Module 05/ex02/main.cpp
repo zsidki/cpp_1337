@@ -34,7 +34,9 @@ int main ()
     try
     {       // ------- Create Bureaucrat and Form -------------- //
         Bureaucrat bureaucrat("Markon Veraty", 45); // if Grade < 1 OR Grade > 150 will catch an excep
-        Form *form = new ShrubberyCreationForm();
+        //Form *form = new ShrubberyCreationForm();
+        ShrubberyCreationForm shrubberyCreationForm("shrubbery");
+
             // ------------ incrementGrade ------------ //
         //bureaucrat.IncrementGrade();
           // ------------ decrementGrade ------------ //
@@ -42,10 +44,10 @@ int main ()
         // bureaucrat.decrementGrade();
          // ------------ Sign the form ------------ //
         // form.beSigned(bureaucrat);
-        bureaucrat.signForm(*form);
+        bureaucrat.signForm(shrubberyCreationForm);
           // ----------  Operator Overload << -------//
         std::cout << bureaucrat << std::endl;
-        std::cout << form << std::endl;
+        std::cout << shrubberyCreationForm << std::endl;
     }
     catch (std::exception &e)
     {
