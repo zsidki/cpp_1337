@@ -20,9 +20,12 @@ class	    Fixed{
     Fixed(float fvalue);		// Parametrized constructor take float
 	Fixed(const Fixed& other);  // Copy constructor
     ~Fixed();                   // Default destructor
+
     Fixed& operator= (const Fixed& Fixed);	// assignment operator =
+
     void setRawBits( int const raw ); 		// Setter
     int getRawBits( void ) const;			// getter
+
 	float toFloat( void ) const;			// converts value fixed-point to floating-point
 	int toInt( void ) const;				// converts value fixed-point to integer
 
