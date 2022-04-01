@@ -5,17 +5,16 @@ Fixed::Fixed(void) : _value(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
-// Parametrized constructor
+// Parametrized constructor "Integer constructor"
 Fixed::Fixed(int ivalue) : _value(ivalue) {
     std::cout<<"Int constructor called"<<std::endl;
      this->_value = ivalue * (1 << _fractional_bits);
 }
 
-// Parametrized constructor
+// Parametrized constructor "Floating point constructor"
 Fixed::Fixed(float fvalue) : _value(fvalue) {
     std::cout<<"Float constructor called"<<std::endl;
     this->_value = roundf(fvalue * (1 << _fractional_bits));
-
 }
 
 // copy constructor
@@ -39,7 +38,7 @@ Fixed& Fixed::operator= (const Fixed& other)
     return (*this); 
 }
 
-// assignment operator
+// Operator overload
 std::ostream& operator<<( std::ostream& os, const Fixed& c )
 {
     os << c.toFloat();
