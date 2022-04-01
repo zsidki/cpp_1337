@@ -2,18 +2,23 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
+#include "Form.hpp"
 
 class RobotomyRequestForm
 {
-protected:
 
-private:
+    private:
+        std::string _target;
 
-public:
-    RobotomyRequestForm(void);
-    RobotomyRequestForm(const RobotomyRequestForm &instance);
-    ~RobotomyRequestForm();
-    RobotomyRequestForm & operator = (const RobotomyRequestForm &instance);
+    public:
+        RobotomyRequestForm(void);
+        RobotomyRequestForm(std::string target);
+        RobotomyRequestForm(const RobotomyRequestForm &target);
+        ~RobotomyRequestForm();
+
+        const std::string getTarget() const;
+
+        RobotomyRequestForm & operator = (const RobotomyRequestForm &form);
 
 };
 

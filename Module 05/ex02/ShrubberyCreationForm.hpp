@@ -12,15 +12,15 @@ class ShrubberyCreationForm : public Form
         std::string _target;
 
     public:
-    ShrubberyCreationForm();
-    ShrubberyCreationForm(std::string target);
-    ShrubberyCreationForm(const ShrubberyCreationForm &form);
-    ~ShrubberyCreationForm();
+        ShrubberyCreationForm();
+        ShrubberyCreationForm(std::string target);
+        ShrubberyCreationForm(const ShrubberyCreationForm &form);
+        ~ShrubberyCreationForm();
 
-    ShrubberyCreationForm & operator = (const ShrubberyCreationForm &instance);
+        ShrubberyCreationForm & operator = (const ShrubberyCreationForm &instance);
 
-    void    execute( Bureaucrat const & executor) const;
-    const std::string getTarget() const;
+        void    execute( Bureaucrat const & executor) const;
+        const std::string getTarget() const;
 
 };
 

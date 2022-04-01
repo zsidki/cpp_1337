@@ -33,20 +33,22 @@ int main ()
 
     try
     {       // ------- Create Bureaucrat and Form -------------- //
-        Bureaucrat bureaucrat("Markon Veraty", 45); // if Grade < 1 OR Grade > 150 will catch an excep
-        //Form *form = new ShrubberyCreationForm();
-        ShrubberyCreationForm shrubberyCreationForm("shrubbery");
+        Bureaucrat bureaucrat("Zak",137); // if Grade < 1 OR Grade > 150 will catch an excep
+        ShrubberyCreationForm shrubberyCreationForm("_shrubbery");
 
             // ------------ incrementGrade ------------ //
-        //bureaucrat.IncrementGrade();
+        bureaucrat.IncrementGrade();
           // ------------ decrementGrade ------------ //
         // bureaucrat.decrementGrade();
         // bureaucrat.decrementGrade();
          // ------------ Sign the form ------------ //
         // form.beSigned(bureaucrat);
         bureaucrat.signForm(shrubberyCreationForm);
+
+        bureaucrat.executeForm(shrubberyCreationForm);
+
           // ----------  Operator Overload << -------//
-        std::cout << bureaucrat << std::endl;
+        //std::cout << bureaucrat << std::endl;
         std::cout << shrubberyCreationForm << std::endl;
     }
     catch (std::exception &e)

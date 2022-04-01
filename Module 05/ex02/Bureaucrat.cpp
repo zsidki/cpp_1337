@@ -68,7 +68,6 @@ std::ostream &	operator<<( std::ostream &ostr, Bureaucrat const & bureaucrat)
 	return ostr;
 }
 
-
 void Bureaucrat::signForm(Form& form)
 {
 	form.beSigned(*this);
@@ -79,4 +78,21 @@ void Bureaucrat::signForm(Form& form)
 		std::cout << _name << " couldn’t sign " << form.getName() << " because ";
 		std::cout << this->getGrade() << " > " << form.getSignGrade() << std::endl;
 	}
+}
+
+int Bureaucrat::getGradExecute() const
+{
+    return(this->_grad_execute);
+}
+
+void    Bureaucrat::executeForm(Form const & form)
+{
+    if ( this->_grade <= form.getGradExecute())
+    {
+        std::cout << this->_name << " execute the from :" << form.getName() << "." << std::endl;
+        form.execute(*this);
+    }
+    else
+        std::cout << this->_name << " cannot execute " << form.getName()
+                << ", because his grade is low to execute it " << form.getName() << "." << std::endl;
 }

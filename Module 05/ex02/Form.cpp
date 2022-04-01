@@ -57,6 +57,9 @@ const char* Form::FormNotSignedException::what() const  throw()
 
 Form::FormNotSignedException::FormNotSignedException(std::string nameform) : _nameform(nameform){}
 
+Form::FormNotSignedException::~FormNotSignedException() throw(){}
+
+
 void	Form::beSigned(const Bureaucrat& bureaucrat)
 {
     if(this->_grade_signed >= bureaucrat.getGrade())
@@ -70,3 +73,4 @@ std::ostream &	operator<<( std::ostream &ostr, Form const & form)
     std::cout << form.getName() << ", Form grade " << form.getGrade();
     return ostr;
 }
+

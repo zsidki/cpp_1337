@@ -11,6 +11,7 @@ class Bureaucrat
 private:
     const std::string _name;
     int _grade;
+    int _grad_execute;
 
 public:
     Bureaucrat(void);
@@ -25,7 +26,12 @@ public:
     void	IncrementGrade();
 	void    DecrementGrade();
 
-    void signForm(Form& form);
+    void    signForm(Form& form);
+
+    void executeForm(Form const & form);
+    int getGradExecute() const;
+
+
 
     class GradeTooHighException : public std::exception
     {   public:

@@ -5,7 +5,7 @@ SRCS  =  main.cpp  Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 
 NAME  = Bureaucrat
 
-DSYM = Bureaucrat.dsym
+DSYM = Bureaucrat.dsym _shrubbery
 
 all: $(NAME)
 

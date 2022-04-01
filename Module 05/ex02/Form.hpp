@@ -19,7 +19,10 @@ public:
     Form(void);
     Form(std::string name, int grade_signed, int grad_execute);
 	Form(const Form& form);
-    virtual ~Form() = 0;
+    ~Form();
+    virtual void    execute( Bureaucrat const & execute) const = 0;
+
+    
 
     Form & operator = (const Form &instance);
 
@@ -29,6 +32,8 @@ public:
     int getGrade() const;
     int getSignGrade() const;
     int getGradExecute() const;
+
+    void executeForm(Form const & form);
 
     class GradeTooHighException : public std::exception
     {   public:
@@ -47,10 +52,10 @@ public:
             std::string _nameform;
         public:
             FormNotSignedException(std::string nameform);
-            virtual const char* what() const throw();
+            virtual const char* what() const throw() ;
+            ~FormNotSignedException() throw();
     };
     
-
 
 };
 
