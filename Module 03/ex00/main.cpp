@@ -8,7 +8,8 @@ int main( void )
 
     fighter1.attack("fighter2");
     fighter2.takeDamage(fighter1.getAttack_Damage());
-    //fighter2.takeDamage(1);
+    fighter2.takeDamage(3);
+    fighter2.beRepaired(3);
 
     
     return 0;
