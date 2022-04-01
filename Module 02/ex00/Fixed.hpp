@@ -14,11 +14,16 @@ class	    Fixed{
 
 	public:
 
+    //----- Constructor & Destructor -------//
     Fixed();
     Fixed(int value);
     Fixed(const Fixed& other);
     ~Fixed();
+
+    //----- Assignment Operator -------//
     Fixed& operator= (const Fixed& Fixed);
+
+    //------- Setter & Getter ---------//
     void setRawBits( int const raw );
     int getRawBits( void ) const;
 

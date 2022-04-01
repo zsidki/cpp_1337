@@ -15,7 +15,7 @@ Fixed::Fixed(const Fixed& other)
     *this = other;
 }
 
-// Default destructor
+// Destructor
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
