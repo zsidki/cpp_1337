@@ -1,7 +1,7 @@
 .PHONY: all fclean clean re
 CC = c++
 flags = -g -Wall -Wextra -Werror #-fsanitize=address
-SRCS  =  main.cpp  Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+SRCS  =  main.cpp  Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
 
 NAME  = Bureaucrat
 

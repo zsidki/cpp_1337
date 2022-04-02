@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Form.hpp"
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public Form
 {
 
     private:
@@ -19,6 +19,7 @@ class RobotomyRequestForm
         const std::string getTarget() const;
 
         RobotomyRequestForm & operator = (const RobotomyRequestForm &form);
+        void    execute( Bureaucrat const & executor) const;
 
 };
 

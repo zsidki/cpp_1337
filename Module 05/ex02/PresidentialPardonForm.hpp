@@ -2,18 +2,25 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
+#include "Form.hpp"
 
-class PresidentialPardonForm
+class Form;
+class PresidentialPardonForm : public Form
 {
-protected:
-
 private:
+    std::string _target;
 
 public:
     PresidentialPardonForm(void);
-    PresidentialPardonForm(const PresidentialPardonForm &instance);
+    PresidentialPardonForm(std::string target);
+    PresidentialPardonForm(const PresidentialPardonForm &form);
     ~PresidentialPardonForm();
+
+    const std::string getTarget() const;
+
     PresidentialPardonForm & operator = (const PresidentialPardonForm &instance);
+
+    void    execute( Bureaucrat const & executor) const;
 
 };
 
