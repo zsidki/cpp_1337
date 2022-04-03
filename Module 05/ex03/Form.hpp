@@ -22,8 +22,6 @@ public:
     ~Form();
     virtual void    execute( Bureaucrat const & execute) const = 0;
 
-    
-
     Form & operator = (const Form &instance);
 
 	void	beSigned(const Bureaucrat& bureaucrat);

@@ -4,7 +4,7 @@ int main ()
 {
     try
     {     // ---------- Create Bureaucrat -------------- //
-        Bureaucrat bureaucrat("Vladimir Poutine", 10); // if Grade < 1 OR Grade > 150 will catch an excep
+        Bureaucrat bureaucrat("Zak", 10); // if Grade < 1 OR Grade > 150 will catch an excep
           // -------------- incrementGrade ------------ //
         //bureaucrat.IncrementGrade();
           // ------------ decrementGrade -------------- //

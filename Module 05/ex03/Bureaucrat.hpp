@@ -31,8 +31,6 @@ public:
     void executeForm(Form const & form);
     int getGradExecute() const;
 
-
-
     class GradeTooHighException : public std::exception
     {   public:
             virtual const char* what() const  throw();

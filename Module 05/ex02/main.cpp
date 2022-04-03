@@ -10,7 +10,7 @@ int main ()
     try
     {   
          // ------- Create Bureaucrat and Forms -------------- //
-        Bureaucrat bureaucrat("Markon Veraty", 5); // if Grade < 1 OR Grade > 150 will catch an excep
+        Bureaucrat bureaucrat("Zak", 5); // if Grade < 1 OR Grade > 150 will catch an excep
         ShrubberyCreationForm shrubberyCreationForm("_shrubbery");
         RobotomyRequestForm robotomyRequestForm("robot");
         PresidentialPardonForm presidentialPardonForm("president");

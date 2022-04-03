@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(void) : _name("Unknown"), _grade_signed(1), _grad_execute(1), _is_signed(false){}
+Form::Form(void) : _name("Unknown"), _grade_signed(30), _grad_execute(42), _is_signed(false){}
 
 Form::Form(std::string name, int grade_signed, int grad_execute) : _name(name), _grade_signed(grade_signed), _grad_execute(grad_execute), _is_signed(false)
 {
@@ -17,7 +17,7 @@ Form::~Form(){}
 
 Form& Form::operator = (const Form &form)
 {
-    this->_is_signed = form._is_signed;
+    this->_is_signed = form.getSignGrade();
     return (*this);
 }
 
