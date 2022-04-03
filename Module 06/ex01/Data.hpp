@@ -2,6 +2,7 @@
 # define DATA_HPP
 
 #include <iostream>
+#include <cstdint>
 
 class Data
 {
@@ -15,7 +16,9 @@ public:
     ~Data();
     Data & operator = (const Data &instance);
 
-    //uintptr_t serialize(Data* ptr);
+    uintptr_t serialize(Data* ptr);
+    Data* deserialize(uintptr_t raw);
+
 
 };
 
