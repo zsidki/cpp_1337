@@ -20,6 +20,9 @@ public:
     int getGrade() const;
     void check_grade(int i);
 
+    void	IncrementGrade();
+	void    DecrementGrade();
+
     Bureaucrat & operator = (const Bureaucrat &instance);
 
     class GradeTooHighException : public std::exception

@@ -1,25 +1,21 @@
 #include "Bureaucrat.hpp"
 
-
-int     main()
+int main ()
 {
-
     try
-    {
-        // Bureaucrat b("Bureaucrat1", 10);
-        // std::cout << b << std::endl;
-
-        Bureaucrat b2("Bureaucrat1", 0);
-        std::cout << b2 << std::endl;
-
-        // Bureaucrat b3("Bureaucrat1", 151);
-        // std::cout << b3 << std::endl;
+    {     // ---------- Create Bureaucrat -------------- //
+        Bureaucrat bureaucrat("Vladimir Poutine", 10); // if Grade < 1 OR Grade > 150 will catch an excep
+          // -------------- incrementGrade ------------ //
+        //bureaucrat.IncrementGrade();
+          // ------------ decrementGrade -------------- //
+        //bureaucrat.DecrementGrade();
+        //bureaucrat.DecrementGrade();
+          // ----------  Operator Overload << --------- //
+        std::cout << bureaucrat << std::endl;
     }
-
-    catch (std::exception& e)
+    catch (std::exception &e)
     {
-        std::cout<<"exception : "<< e.what() <<std::endl;
+        std::cout << "Exception : " << e.what() << std::endl; 
     }
-
-    return 0;
+    return (0);
 }
