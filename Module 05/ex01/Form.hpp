@@ -16,20 +16,26 @@ private:
 
 
 public:
+
+    //----- Constructor & Destructor -------//
     Form(void);
     Form(std::string name, int grade_signed, int grad_execute);
 	Form(const Form& form);
     ~Form();
 
+    //----- Assignment Operator -------//
     Form & operator = (const Form &instance);
 
-	void	beSigned(const Bureaucrat& bureaucrat);
-
+    //--------- Getter -----------//
     std::string getName() const;
     int getGrade() const;
     int getSignGrade() const;
     int getGradExecute() const;
 
+    //------- Member function ---------//
+	void	beSigned(const Bureaucrat& bureaucrat);
+
+    //---------- Exception ------------//
     class GradeTooHighException : public std::exception
     {   public:
             virtual const char* what() const  throw();
@@ -43,6 +49,7 @@ public:
 
 };
 
+//----- Assignment Operator -------//
 std::ostream &	operator<<( std::ostream & ostr, Form const & form);
 
 #endif

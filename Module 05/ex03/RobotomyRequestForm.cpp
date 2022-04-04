@@ -25,7 +25,7 @@ const std::string RobotomyRequestForm::getTarget() const
 
 std::ostream &	operator<<( std::ostream & ostr, RobotomyRequestForm const & form)
 {
-    std::cout << form.getName() << form.getGrade();
+    std::cout << form.getName() << "    ==> " << " Grade "<<  form.getGrade();
     return ostr;
 }
 
@@ -36,5 +36,5 @@ void    RobotomyRequestForm::execute( Bureaucrat const & execute) const
     else if (execute.getGrade() > this->getGradExecute())
         throw GradeTooLowException();
     else
-         std::cout << this->_target << " has been robotomized successfully 50% of the time" << std::endl;
+        std::cout << this->_target << " has been robotomized successfully 50% of the time" << std::endl;
 }

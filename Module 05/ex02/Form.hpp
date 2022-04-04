@@ -14,27 +14,29 @@ private:
     const int _grad_execute;
 	bool _is_signed;
 
-
 public:
+
+    //----- Constructor & Destructor -------//
     Form(void);
     Form(std::string name, int grade_signed, int grad_execute);
 	Form(const Form& form);
     ~Form();
-    virtual void    execute( Bureaucrat const & execute) const = 0;
 
-    
-
+    //----- Assignment Operator -------//
     Form & operator = (const Form &instance);
 
-	void	beSigned(const Bureaucrat& bureaucrat);
-
+    //--------- Getter -----------//
     std::string getName() const;
     int getGrade() const;
     int getSignGrade() const;
     int getGradExecute() const;
 
+    //------- Member function ---------//
+	void	beSigned(const Bureaucrat& bureaucrat);
     void executeForm(Form const & form);
+    virtual void    execute( Bureaucrat const & execute) const = 0;
 
+    //---------- Exception ------------//
     class GradeTooHighException : public std::exception
     {   public:
             virtual const char* what() const  throw();
@@ -51,14 +53,15 @@ public:
         private:
             std::string _nameform;
         public:
+            //----- Constructor & Destructor -------//
             FormNotSignedException(std::string nameform);
-            virtual const char* what() const throw() ;
             ~FormNotSignedException() throw();
-    };
-    
 
+            virtual const char* what() const throw() ;
+    };
 };
 
+//----- Assignment Operator -------//
 std::ostream &	operator<<( std::ostream & ostr, Form const & form);
 
 #endif

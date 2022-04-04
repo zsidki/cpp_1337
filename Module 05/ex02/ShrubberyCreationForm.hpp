@@ -12,18 +12,24 @@ class ShrubberyCreationForm : public Form
         std::string _target;
 
     public:
+        //----- Constructor & Destructor -------//
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(const ShrubberyCreationForm &form);
         ~ShrubberyCreationForm();
 
+        //----- Assignment Operator -------//
         ShrubberyCreationForm & operator = (const ShrubberyCreationForm &instance);
 
-        void    execute( Bureaucrat const & executor) const;
+        //--------- Getter -----------//
         const std::string getTarget() const;
+
+        //------- Member function ---------//
+        void    execute( Bureaucrat const & executor) const;
 
 };
 
+//----- Assignment Operator -------//
 std::ostream &	operator<<( std::ostream & ostr, ShrubberyCreationForm const & instance);
 
 #endif

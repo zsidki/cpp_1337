@@ -27,7 +27,7 @@ const std::string ShrubberyCreationForm::getTarget() const
 
 std::ostream &	operator<<( std::ostream & ostr, ShrubberyCreationForm const & shrubbery)
 {
-    std::cout << shrubbery.getName() << shrubbery.getGrade();
+    std::cout << shrubbery.getName() << "  ==> " << " Grade "<< shrubbery.getGrade();
     return ostr;
 }
 

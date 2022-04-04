@@ -11,18 +11,25 @@ class RobotomyRequestForm : public Form
         std::string _target;
 
     public:
+
+        //----- Constructor & Destructor -------//
         RobotomyRequestForm(void);
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm(const RobotomyRequestForm &target);
         ~RobotomyRequestForm();
 
+        //----- Assignment Operator -------//
+        RobotomyRequestForm & operator = (const RobotomyRequestForm &form);
+
+        //--------- Getter -----------//
         const std::string getTarget() const;
 
-        RobotomyRequestForm & operator = (const RobotomyRequestForm &form);
+        //------- Member function ---------//
         void    execute( Bureaucrat const & executor) const;
 
 };
 
+//----- Assignment Operator -------//
 std::ostream &	operator<<( std::ostream & ostr, RobotomyRequestForm const & instance);
 
 #endif

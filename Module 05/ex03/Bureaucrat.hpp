@@ -14,23 +14,27 @@ private:
     int _grad_execute;
 
 public:
+    //----- Constructor & Destructor -------//
     Bureaucrat(void);
     Bureaucrat(std::string name, int grade);
     Bureaucrat(const Bureaucrat &instance);
     ~Bureaucrat();
+
+    //----- Assignment Operator -------//
     Bureaucrat & operator = (const Bureaucrat &instance);
 
+    //--------- Getter -----------//
     std::string getName() const;
     int getGrade() const;
-
-    void	IncrementGrade();
-	void    DecrementGrade();
-
-    void    signForm(Form& form);
-
-    void executeForm(Form const & form);
     int getGradExecute() const;
 
+    //------- Member function ---------//
+    void	IncrementGrade();
+	void    DecrementGrade();
+    void    signForm(Form& form);
+    void    executeForm(Form const & form);
+
+    //---------- Exception ------------//
     class GradeTooHighException : public std::exception
     {   public:
             virtual const char* what() const  throw();
@@ -43,7 +47,7 @@ public:
     };
 };
 
-
+//----- Assignment Operator -------//
 std::ostream &	operator<<( std::ostream & ostr, Bureaucrat const & bureaucrat);
 
 #endif

@@ -1,11 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() :  Form("PresidentialPardonForm", 72, 45), _target("unknown") {}
+PresidentialPardonForm::PresidentialPardonForm() :  Form("PresidentialPardonForm", 25, 5), _target("unknown") {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) :  Form("PresidentialPardonForm", 72, 45), _target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string target) :  Form("PresidentialPardonForm", 25, 5), _target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &form) : 
-Form("PresidentialPardonForm", 72, 45), _target(form.getTarget())
+Form("PresidentialPardonForm", 25, 5), _target(form.getTarget())
 {
     *this = form;
 }
@@ -25,7 +25,7 @@ const std::string PresidentialPardonForm::getTarget() const
 
 std::ostream &	operator<<( std::ostream & ostr, PresidentialPardonForm const & form)
 {
-    std::cout << form.getName() << form.getGrade();
+    std::cout << form.getName() << " ==> " << " Grade "<< form.getGrade();
     return ostr;
 }
 

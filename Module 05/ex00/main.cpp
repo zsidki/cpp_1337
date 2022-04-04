@@ -6,9 +6,9 @@ int main ()
     {     // ---------- Create Bureaucrat -------------- //
         Bureaucrat bureaucrat("Zak", 10); // if Grade < 1 OR Grade > 150 will catch an excep
           // -------------- incrementGrade ------------ //
-        //bureaucrat.IncrementGrade();
+        bureaucrat.IncrementGrade();
           // ------------ decrementGrade -------------- //
-        //bureaucrat.DecrementGrade();
+        bureaucrat.DecrementGrade();
         //bureaucrat.DecrementGrade();
           // ----------  Operator Overload << --------- //
         std::cout << bureaucrat << std::endl;

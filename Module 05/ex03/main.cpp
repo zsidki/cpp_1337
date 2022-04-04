@@ -1,16 +1,19 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "Intern.hpp" 
+#include "Intern.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main ()
 {
+
     Intern someRandomIntern;
     Form* rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-    Bureaucrat bureaucrat("Zak", 10);
-
     try
     {
+        rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+        Bureaucrat bureaucrat("Zak", 151);
         if (rrf)
         {
             bureaucrat.signForm(*rrf);

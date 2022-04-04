@@ -10,7 +10,7 @@ int main ()
     try
     {   
          // ------- Create Bureaucrat and Forms -------------- //
-        Bureaucrat bureaucrat("Zak", 5); // if Grade < 1 OR Grade > 150 will catch an excep
+        Bureaucrat bureaucrat("Zak", 20); // if Grade < 1 OR Grade > 150 will catch an excep
         ShrubberyCreationForm shrubberyCreationForm("_shrubbery");
         RobotomyRequestForm robotomyRequestForm("robot");
         PresidentialPardonForm presidentialPardonForm("president");
@@ -27,8 +27,10 @@ int main ()
         bureaucrat.signForm(shrubberyCreationForm);
         
         // ------------ Execute the form --------------- //
+
          shrubberyCreationForm.execute(bureaucrat);
         bureaucrat.executeForm(shrubberyCreationForm);
+        
         // ----------  Operator Overload << ---------//
         std::cout << "\n// ---------------  Info Bureaucrats & Forms ------------------ //\n" << std::endl;
         std::cout << bureaucrat << std::endl;

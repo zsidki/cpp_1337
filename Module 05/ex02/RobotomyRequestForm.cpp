@@ -25,7 +25,7 @@ const std::string RobotomyRequestForm::getTarget() const
 
 std::ostream &	operator<<( std::ostream & ostr, RobotomyRequestForm const & form)
 {
-    std::cout << form.getName() << form.getGrade();
+    std::cout << form.getName() << "    ==> " << " Grade "<<  form.getGrade();
     return ostr;
 }
 

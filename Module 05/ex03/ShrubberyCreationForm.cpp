@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :  Form("ShrubberyCreationForm", 145,137), _target(target){}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :  Form("ShrubberyCreationForm", 145, 137), _target(target){}
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137), _target("unknown")
 {}
@@ -27,7 +27,7 @@ const std::string ShrubberyCreationForm::getTarget() const
 
 std::ostream &	operator<<( std::ostream & ostr, ShrubberyCreationForm const & shrubbery)
 {
-    std::cout << shrubbery.getName() << shrubbery.getGrade();
+    std::cout << shrubbery.getName() << "  ==> " << " Grade "<<  shrubbery.getGrade();
     return ostr;
 }
 
