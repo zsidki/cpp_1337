@@ -26,6 +26,4 @@ class ShrubberyCreationForm : public Form
 
 std::ostream &	operator<<( std::ostream & ostr, ShrubberyCreationForm const & instance);
 
-
-
 #endif

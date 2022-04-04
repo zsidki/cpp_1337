@@ -28,7 +28,7 @@ std::string     Form::getName() const
 
 int Form::getGrade() const 
 {
-    return(this->_is_signed);
+    return(this->_grade_signed);
 }
 
 int Form::getSignGrade() const

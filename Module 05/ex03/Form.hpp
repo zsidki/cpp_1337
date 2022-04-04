@@ -53,8 +53,6 @@ public:
             virtual const char* what() const throw() ;
             ~FormNotSignedException() throw();
     };
-    
-
 };
 
 std::ostream &	operator<<( std::ostream & ostr, Form const & form);
