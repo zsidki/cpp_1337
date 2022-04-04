@@ -16,8 +16,6 @@ public:
     ~Data();
     Data & operator = (const Data &instance);
 
-    uintptr_t serialize(Data* ptr);
-    Data* deserialize(uintptr_t raw);
 
 
 };
