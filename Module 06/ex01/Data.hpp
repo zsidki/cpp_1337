@@ -2,24 +2,18 @@
 # define DATA_HPP
 
 #include <iostream>
-#include <cstdint>
-
-class Data
+//#include <typeinfo>
+typedef struct s_data
 {
+	int age;
+	std::string name;
+	std::string city;
+}				Data;
 
-private:
-    unsigned int uintptr_t;
+//It takes a pointer and converts it to the unsigned integer type uintptr_t
+uintptr_t serialize(Data* ptr);
 
-public:
-    Data(void);
-    Data(const Data &instance);
-    ~Data();
-    Data & operator = (const Data &instance);
-
-
-
-};
-
-std::ostream &	operator<<( std::ostream & ostr, Data const & instance);
+//It takes an unsigned integer parameter and converts it to a pointer to Data.
+Data* deserialize(uintptr_t raw);
 
 #endif

@@ -1,9 +1,9 @@
 .PHONY: all fclean clean re
 CC = c++
 flags = -g -Wall -Wextra -Werror #-fsanitize=address
-SRCS  =  main.cpp Data.cpp
+SRCS  =  main.cpp A.cpp B.cpp C.cpp Base.cpp
 
-NAME  = Serialization
+NAME  = dynamic_cast
 dsym = $(NAME).dSYM
 
 all: $(NAME)
