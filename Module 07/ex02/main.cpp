@@ -56,6 +56,5 @@ int     main()
     //ax[0] = 10;
     std::cout << "size const array = " << ax.size() << std::endl;
 
-
     return 0;
 }
