@@ -18,6 +18,13 @@ class Span
     int		shortestSpan();
     int		longestSpan();
 
+    template <typename Iterator>
+    void addNumber(Iterator start, Iterator last)
+    {
+        while (start != last)
+            addNumber(*start++);
+    }
+
     class NotSpanException : public std::exception
     {
         const char * what () const throw();
@@ -28,7 +35,6 @@ class Span
         const char * what () const throw();
     };
 };
-
 void    sort(int *array, int n);
 
 #endif

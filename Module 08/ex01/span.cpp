@@ -3,7 +3,7 @@
 Span::Span(unsigned int N)
 {
     if (N <= 0)
-        throw Span::NotSpanException();
+        throw Span::NoSpaceLeftException();
     _size = N;
     _array = new int[N];
     _index = 0;
@@ -22,6 +22,7 @@ void Span::addNumber(int nb)
     _array[_index] = nb;
     _index++;
 }
+
 
 void    sort(int *array, int n)
 {
