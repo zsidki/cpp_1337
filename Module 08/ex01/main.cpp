@@ -44,7 +44,6 @@ int main()
         std::cerr << e.what() << '\n';
     }
 
-
     try
     {
         Span sp3 = Span(10);
