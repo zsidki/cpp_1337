@@ -14,6 +14,7 @@ Span::~Span()
     delete[] _array;
 }
 
+//add many numbers to your Span in one call
 void Span::addNumber(int nb)
 {
     if (_index == _size)
@@ -42,6 +43,7 @@ void    sort(int *array, int n)
     }
 }
 
+//return the shortest span between two elements
 int     Span::shortestSpan()
 {
     unsigned int i;
@@ -63,6 +65,7 @@ int     Span::shortestSpan()
     return (min);
 }
 
+//return the longest span between two elements
 int     Span::longestSpan()
 {
     if(this->_index < 2)

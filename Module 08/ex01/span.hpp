@@ -28,6 +28,7 @@ class Span
         const char * what () const throw();
     };
 };
+
 void    sort(int *array, int n);
 
 #endif
