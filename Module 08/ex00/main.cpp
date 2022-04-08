@@ -1,25 +1,25 @@
 #include "easyfind.hpp"
 
-int main () {
-//   // using std::find with array and pointer:
-//   int myints[] = { 10, 20, 30, 40 };
-//   int * p;
+void print(int i)
+{
+    std::cout << i << std::endl;
+}
 
-//   p = std::find (myints, myints+4, 30);
-//   if (p != myints+4)
-//     std::cout << "Element found in myints: " << *p << '\n';
-//   else
-//     std::cout << "Element not found in myints\n";
+int main( void )
+{
+    std::list<int>                      list;
 
-//   // using std::find with vector and iterator:
-//   std::vector<int> myvector (myints,myints+4);
-//   std::vector<int>::iterator it;
+    list.push_back(1337);
+    list.push_back(19);
+    list.push_back(42);
+    list.push_back(0);
 
-//   it = find (myvector.begin(), myvector.end(), 30);
-//   if (it != myvector.end())
-//     std::cout << "Element found in myvector: " << *it << '\n';
-//   else
-//     std::cout << "Element not found in myvector\n";
+    easyfind(list, 42);
 
-//   return 0;
+    easyfind(list, 10);
+
+    std::cout<< "\n//------ list of numbers ------//\n";
+    std::for_each(list.begin(), list.end(), print);
+
+    return 0;
 }
