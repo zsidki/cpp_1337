@@ -10,13 +10,13 @@
 #include <list>
 
 template <typename T> 
-class MutantStack : public std::stack<int>
+class MutantStack : public std::stack<T>
 {
     public:
         MutantStack(void) {};
         ~MutantStack(void) {};
         MutantStack(MutantStack const &src) { *this = src; };
-        MutantStack &operator=(MutantStack const &src) {  	this->c = src.c; return (*this); };
+        MutantStack &operator=(MutantStack const &src) {  this->c = src.c; return (*this); };
 
     	typedef	typename	std::stack<T>::container_type::iterator	iterator;
 		typedef	typename    std::stack<T>::container_type::const_iterator const_iterator;
